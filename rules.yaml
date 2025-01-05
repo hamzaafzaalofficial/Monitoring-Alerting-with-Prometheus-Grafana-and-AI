@@ -1,0 +1,10 @@
+groups:
+- name: cpu_usage_alerts
+  rules:
+  - alert: HighPredictedCPUUsage
+    expr: predicted_cpu_usage > 0.3
+    labels:
+      severity: critical
+    annotations:
+      summary: "High Predicted CPU Usage"
+      description: "Predicted CPU usage is above 30% for the last 5 minutes."
